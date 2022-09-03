@@ -1,8 +1,13 @@
+.stepper-form-container {
+	position: relative;
+}
 .form__container {
-	display: flex;
 	flex-direction: column;
-	max-width: 25rem;
+	width: 25rem;
 	margin: 0 auto;
+	position: absolute;
+	left: 0;
+	right: 0;
 }
 .form {
 	width: 90%;
@@ -14,13 +19,11 @@
 	margin-bottom: 1rem;
 }
 .form__helperText {
-	/* font-size: 0.9rem; */
 	margin: 0 0 2.8rem 0;
 }
 .input__label {
 	display: block;
 	margin: 0 0 0.4rem 0;
-	/* font-size: 0.9rem; */
 	font-weight: 500;
 }
 .input__field {
@@ -42,3 +45,27 @@
 	border: none;
 	border-radius: 0.3rem;
 }
+.form__container-enter {
+	position: absolute;
+	opacity: 0;
+	transform: var(--slide-in);
+}
+.form__container-enter-active {
+	opacity: 1;
+	transform: translateX(0);
+	transition: opacity 500ms, transform 500ms;
+}
+.form__container-exit {
+	opacity: 1;
+}
+.form__container-exit-active {
+	position: absolute;
+	opacity: 0;
+	transform: var(--slide-out);
+	transition: opacity 500ms, transform 500ms;
+}
+
+/*
+forward -> enter right -> exit left
+backward -> enter left -> exit right
+*/
