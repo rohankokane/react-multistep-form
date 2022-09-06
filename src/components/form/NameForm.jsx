@@ -21,7 +21,7 @@ export const NameForm = ({ fullName, displayName }) => {
 				<input
 					className='input__field'
 					type='text'
-					id='displayNamje'
+					id='displayName'
 					name='display name'
 					placeholder='Enter display name'
 					value={displayName}

@@ -1,9 +1,10 @@
 .stepper-form-container {
 	position: relative;
+	width: 800px;
 }
 .form__container {
 	flex-direction: column;
-	width: 25rem;
+	/* width: 25rem; */
 	margin: 0 auto;
 	position: absolute;
 	left: 0;
@@ -11,6 +12,7 @@
 }
 .form {
 	width: 90%;
+	max-width: 400px;
 	margin: 0 auto;
 	text-align: start;
 }
@@ -34,6 +36,41 @@
 	border: 1px solid var(--base-gray-100);
 	border-radius: 0.3rem;
 	font: inherit;
+}
+.input__container {
+	position: relative;
+	display: flex;
+	justify-content: stretch;
+	align-items: stretch;
+	width: 100%;
+	margin: 0 0 1.2rem 0;
+
+	/* border: 1px solid var(--base-gray-100);
+	border-radius: 0.3rem; */
+}
+.input__container > .input__field {
+	/* border: none;
+	outline: none; */
+	margin: 0;
+}
+.input__overlap {
+	padding: 0.8rem 1rem;
+	border: 1px solid var(--base-gray-100);
+	border-radius: 0.3rem;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	background-color: var(--base-gray-50);
+	border-radius: 0.3rem;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.input__field--padded {
+	border-left: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	/* text-indent: 5rem; */
+	/* padding-left: 5rem; */
 }
 .form__button {
 	width: 100%;

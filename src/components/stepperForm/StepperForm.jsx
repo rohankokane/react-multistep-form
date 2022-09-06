@@ -3,13 +3,16 @@ import { CSSTransition } from 'react-transition-group'
 import 'components/form/form.css'
 import { Step, Stepper } from 'components/stepper'
 import { NameForm } from 'components/form/NameForm'
+import { WorkspaceForm } from 'components/form/WorkspaceForm'
 
 export const StepperForm = () => {
 	const [step, setStep] = useState(0)
 	const [prevStep, setPrevStep] = useState(0)
 	const handleStepClick = (n) => {
-		setPrevStep(step)
-		setStep(n)
+		if (Math.abs(n - step) === 1) {
+			setPrevStep(step)
+			setStep(n)
+		}
 	}
 	const direction = prevStep < step ? 'forward' : 'backward'
 	const slide = {
@@ -33,7 +36,7 @@ export const StepperForm = () => {
 				<NameForm fullName={'steve'} displayName='ste' />
 			</FormWrapper>
 			<FormWrapper active={step === 1}>
-				<NameForm fullName={'stark'} displayName='tony' />
+				<WorkspaceForm workspaceName={'apple'} workspaceURL='apple.com' />
 			</FormWrapper>
 			<FormWrapper active={step === 2}>
 				<NameForm fullName={'stark'} displayName='tony' />
