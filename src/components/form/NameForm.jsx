@@ -1,9 +1,9 @@
-export const NameForm = ({ fullName, displayName }) => {
+export const NameForm = ({ fullName, displayName, handleFormSubmit }) => {
 	return (
 		<div className='form__container'>
 			<h2 className='form__heading'>Welcome! First things first...</h2>
 			<p className='form__helperText'>You can always change the name later.</p>
-			<form className='form'>
+			<form className='form' onSubmit={handleFormSubmit}>
 				<label className='input__label' htmlFor='fullName'>
 					Full Name
 				</label>
@@ -11,9 +11,9 @@ export const NameForm = ({ fullName, displayName }) => {
 					className='input__field'
 					type='text'
 					id='fullName'
-					name='full name'
+					name='fullName'
 					placeholder='Enter your full name'
-					value={fullName}
+					defaultValue={fullName}
 				/>
 				<label className='input__label' htmlFor='displayName'>
 					Display Name
@@ -22,9 +22,9 @@ export const NameForm = ({ fullName, displayName }) => {
 					className='input__field'
 					type='text'
 					id='displayName'
-					name='display name'
+					name='displayName'
 					placeholder='Enter display name'
-					value={displayName}
+					defaultValue={displayName}
 				/>
 				<button className='form__button' type='submit'>
 					Create Workspace

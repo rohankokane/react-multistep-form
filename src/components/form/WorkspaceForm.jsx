@@ -1,9 +1,9 @@
-export const WorkspaceForm = ({ workspaceName, workspaceURL }) => {
+export const WorkspaceForm = ({ workspaceName, workspaceUrl, handleFormSubmit }) => {
 	return (
 		<div className='form__container'>
 			<h2 className='form__heading'>Let's set up a home for all your work</h2>
 			<p className='form__helperText'>You can always change the name later.</p>
-			<form className='form'>
+			<form className='form' onSubmit={handleFormSubmit}>
 				<label className='input__label' htmlFor='workspaceName'>
 					Workspace Name
 				</label>
@@ -11,11 +11,11 @@ export const WorkspaceForm = ({ workspaceName, workspaceURL }) => {
 					className='input__field'
 					type='text'
 					id='workspaceName'
-					name='workspace name'
+					name='workspaceName'
 					placeholder='Enter your workspace name'
-					value={workspaceName}
+					defaultValue={workspaceName}
 				/>
-				<label className='input__label' htmlFor='workspaceURL'>
+				<label className='input__label' htmlFor='workspaceUrl'>
 					Workspace URL
 					<span className='input__helper'>(optional)</span>
 				</label>
@@ -24,10 +24,10 @@ export const WorkspaceForm = ({ workspaceName, workspaceURL }) => {
 					<input
 						className='input__field input__field--padded'
 						type='text'
-						id='workspaceURL'
-						name='workspace name'
-						placeholder='http://google.com'
-						value={workspaceURL}
+						id='workspaceUrl'
+						name='workspaceUrl'
+						placeholder='example'
+						defaultValue={workspaceUrl}
 					/>
 				</div>
 				<button className='form__button' type='submit'>

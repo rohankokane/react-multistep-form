@@ -6,6 +6,8 @@
 	margin: 3rem 0;
 }
 .stepper__step {
+	--x-spacing: 1.25rem;
+	--step-color: var(--base-gray-100);
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -13,10 +15,13 @@
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
-	--x-spacing: 2rem;
 	margin: 0 var(--x-spacing);
-	--step-color: var(--base-gray-100);
 	cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+	.stepper__step {
+		--x-spacing: 2rem;
+	}
 }
 :not(.stepper__step:first-child)::before {
 	position: absolute;

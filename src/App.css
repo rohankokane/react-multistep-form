@@ -1,25 +1,12 @@
 .App {
-	text-align: center;
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	/* font-size: calc(10px + 2vmin); */
+	text-align: center;
+	min-height: 100vh;
 	background-color: white;
 	padding-top: 4rem;
 	padding-bottom: 2rem;
-
-	--base-light: #ffffff;
-	--base-gray-50: #f8f9fc;
-	--base-gray-100: #bababa;
-	--base-dark: #111111;
-
-	--font-light: var(--base-light);
-	--font-dark: var(--base-dark);
-
-	--brand-500: #664de5;
-
-	--brand-600: #2415c9;
 	overflow: hidden;
 }

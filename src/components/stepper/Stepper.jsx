@@ -14,7 +14,11 @@ export const Stepper = ({ currentStep = 0, children }) => {
 }
 
 export const Step = (props) => {
-	return <li {...props}>{props.index + 1}</li>
+	return (
+		<li tabIndex={0} {...props}>
+			{props.index + 1}
+		</li>
+	)
 }
 
 /*

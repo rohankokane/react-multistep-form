@@ -6,6 +6,17 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+:root {
+	--base-light: #ffffff;
+	--base-gray-50: #f8f9fc;
+	--base-gray-100: #cfcfcf;
+	--base-dark: #111111;
+
+	--font-light: var(--base-light);
+	--font-dark: var(--base-dark);
+
+	--brand-500: #664de5;
+}
 body {
 	margin: 0;
 	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',

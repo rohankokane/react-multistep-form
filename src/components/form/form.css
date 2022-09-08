@@ -1,14 +1,15 @@
 .stepper-form-container {
 	position: relative;
-	width: 800px;
+	width: 100%;
+	max-width: 800px;
 }
 .form__container {
 	flex-direction: column;
-	/* width: 25rem; */
 	margin: 0 auto;
 	position: absolute;
 	left: 0;
 	right: 0;
+	padding: 0 0.25rem;
 }
 .form {
 	width: 90%;
@@ -44,13 +45,67 @@
 	align-items: stretch;
 	width: 100%;
 	margin: 0 0 1.2rem 0;
+}
+.input__tile-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.input__tile-container {
+	position: relative;
+	height: 9.85rem;
+	width: 9.5rem;
+	margin: 0 0.5rem 1.2rem;
+}
+@media screen and (min-width: 768px) {
+	.input__tile-container {
+		height: 11.2rem;
+		width: 11.5rem;
+		margin: 0 0.5rem 1.2rem;
+	}
+}
+.input__tile-radio {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	cursor: pointer;
+}
+.input__tile {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	width: 100%;
+	height: 100%;
+	border: 2px solid var(--base-gray-100);
+	border-radius: 5px;
+	padding: 1.25rem;
+}
+.input__tile-icon {
+	width: 1.8rem;
+	height: 1.8rem;
+}
 
-	/* border: 1px solid var(--base-gray-100);
-	border-radius: 0.3rem; */
+.input__tile-radio:checked + .input__tile {
+	border-color: var(--brand-500);
+	color: var(--brand-500);
+}
+.input__tile-radio:checked + .input__tile > .input__tile-icon {
+	fill: var(--brand-500);
+}
+.input__tile-label {
+	font-size: 0.925rem;
+	font-weight: 600;
+	text-align: left;
+}
+.input__tile-desc {
+	font-size: 0.85rem;
 }
 .input__container > .input__field {
-	/* border: none;
-	outline: none; */
 	margin: 0;
 }
 .input__overlap {
@@ -69,11 +124,11 @@
 	border-left: 0;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
-	/* text-indent: 5rem; */
-	/* padding-left: 5rem; */
 }
 .form__button {
 	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
 	padding: 0.8rem 1rem;
 	font: inherit;
 	font-weight: 500;
@@ -81,6 +136,7 @@
 	background-color: var(--brand-500);
 	border: none;
 	border-radius: 0.3rem;
+	cursor: pointer;
 }
 .form__container-enter {
 	position: absolute;
@@ -102,7 +158,22 @@
 	transition: opacity 500ms, transform 500ms;
 }
 
-/*
-forward -> enter right -> exit left
-backward -> enter left -> exit right
-*/
+.form__circle-icon--filled {
+	fill: var(--base-light);
+	background-color: var(--brand-500);
+	width: 3rem;
+	height: 3rem;
+	margin: 1.25rem;
+	padding: 0.825rem;
+	border-radius: 100%;
+}
+.form__container--completion {
+	flex-direction: column;
+	margin: 0 auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 90%;
+	max-width: 480px;
+	margin: 0 auto;
+}
